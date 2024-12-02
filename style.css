@@ -1,0 +1,136 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff; /* White text for contrast */
+    background: linear-gradient(135deg, #000, #1a1a1a, #333); /* Black gradient */
+    background-attachment: fixed; /* Makes gradient stay fixed during scroll */
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Glowing Animation */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    animation: glow 2s infinite; /* Glowing animation */
+}
+
+/* Keyframes for logo glow */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12, 0 0 20px #f39c12;
+    }
+    50% {
+        text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
+    }
+}
+
+/* Navigation styles */
+nav .nav-links {
+    list-style: none;
+    display: flex; /* Display menu horizontally */
+    gap: 30px;
+}
+
+nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Light blue glowing hover effect for menu */
+nav .nav-links li a:hover {
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff; /* Light blue glow */
+}
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Align to the right */
+    top: 20px;   /* Vertical alignment */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+    }
+    .menu-icon {
+        display: block; /* Show hamburger icon */
+    }
+
+    nav {
+        display: none; /* Hide navigation by default */
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+        text-align: center;
+        padding: 10px 0;
+        z-index: 999; /* Ensure it appears above other content */
+    }
+    
+    /* Show Navigation When Active (After Clicking Hamburger Icon) */
+    nav.active {
+        display: block;
+    }
+
+    nav .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem; /* Slightly larger font for mobile */
+        padding: 10px 20px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    /* Glow effect on hover */
+    nav .nav-links li a:hover {
+        color: #00bfff;
+        text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff; /* Light blue glow */
+    }
+}
